@@ -3,6 +3,14 @@ body{
     color:white;
 }
 
+#Supported_Commands {
+    position: absolute;
+    float: right;
+    right: 0px;
+    top: 0px;
+    max-width: 50%;
+    overflow: auto;
+}
 #textInput1, #textInput2, #textInput3 {
     width: 50vw;
     height: 10vh;
