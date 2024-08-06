@@ -12,6 +12,12 @@ function RunSQLCommand() {
         resultsTable.remove()
     }
 
+    if (SQLCommand === "CREATE TABLE") {
+        createTable()
+        return 0
+    }
+
+
     let tableName = fromStatement[1].trim().split(' ')[0];
     let selectStatement = fromStatement[0].trim().split(' ').slice(1);
 
@@ -52,6 +58,27 @@ function RunSQLCommand() {
                 break
         }
     }
+}
+
+function createTable() {
+    let newTable = document.createElement('textarea')
+    let numberOfTables = document.querySelectorAll('textarea').length
+    let label = "textInput" + numberOfTables
+
+    newTable.id = label
+    newTable.title = label 
+    newTable.placeholder = "Enter Text Data"
+    newTable.style.width = "50vw"
+    newTable.style.height = "10vh"
+   // newTable.style.overflow-wrap = "normal"
+   // newTable.style.overflow-x = "scroll"
+
+    let tableTitle = document.createElement('p')
+    tableTitle.innerText = label
+
+    let body = document.querySelector('body')
+    body.prepend(newTable)
+    body.prepend(tableTitle)
 }
 
 function getSelectStatement(selectStatement, tableFinder) {
