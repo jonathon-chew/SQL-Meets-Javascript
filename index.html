@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=100vw, initial-scale=1.0">
+  <title>Making SQL quierries in Javascript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p>textInput1</p>
+  <textarea id="textInput1" placeholder="Enter text data" Title="textInput1"></textarea>
+  <p>textInput2</p>
+  <textarea id="textInput2" placeholder="Enter text data" Title="textInput2"></textarea>
+  <p>textInput3</p>
+  <textarea id="textInput3" placeholder="Enter text data" Title="textInput3"></textarea>
+  <p>Enter commands here</p><br>
+  <textarea id="SQLcommand" placeholder="SQL COMMAND HERE"/>SELECT * FROM table</textarea>
+  <button id="run" onclick="RunSQLCommand()">Run</button>
+  <br>
+  <table id="resultTable"></table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
