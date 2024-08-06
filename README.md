@@ -17,3 +17,6 @@ It takes in up to 3 csv's as just text from text input and allows a person to us
     DROP TABLE remvoe a table
     JOIN(ing) of tables
     ALTER TABLE Insert/Replace text inside a table
+    CREATE TABLE
+    WHERE Logic
+    GROUP BY 
