@@ -64,8 +64,6 @@ function createTable(tableID) {
     newTable.placeholder = "Enter Text Data"
     newTable.style.width = "50vw"
     newTable.style.height = "10vh"
-    // newTable.style.overflow-wrap = "normal"
-    // newTable.style.overflow-x = "scroll"
 
     let tableTitle = document.createElement('p')
     tableTitle.innerText = label
@@ -116,8 +114,6 @@ function getSelectStatement(selectStatement, tableFinder) {
 }
 
 function showEntireTable(textInput) {
-    // Get the text input value - this is from the passed in value
-    console.log(textInput)
     // Split the input by new lines to create an array of lines
     const lines = textInput.split("\n");
 
@@ -127,13 +123,13 @@ function showEntireTable(textInput) {
     // Clear the existing table content
     resultTable.innerHTML = '';
 
-    const startRow = resultTable.insertRow(-1);
+    /* const startRow = resultTable.insertRow(-1);
     const rowLength = lines[0].split(",")
-
-    for (let i = 0; i < rowLength.length; i++) {
-        const newCell = startRow.insertCell(-1);
-        newCell.textContent = i + 1
-    }
+    
+        for (let i = 0; i < rowLength.length - 1; i++) {
+            const newCell = startRow.insertCell(-1);
+            newCell.textContent = i + 1
+        } */
 
     // Loop through each line
     lines.forEach((line) => {
@@ -145,8 +141,10 @@ function showEntireTable(textInput) {
 
         // Loop through the values and add each one to a new cell in the row
         values.forEach((value) => {
-            const cell = newRow.insertCell(-1);
-            cell.textContent = value;
+            if (value != '') {
+                const cell = newRow.insertCell(-1);
+                cell.textContent = value;
+            }
         });
     });
 
