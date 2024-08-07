@@ -31,6 +31,12 @@ function RunSQLCommand() {
         outputString = getSelectStatement(selectStatement, tableID)
         showEntireTable(outputString)
     }
+
+    if (SQLCommand.includes("INSERT INTO")) {
+        let tableToInsertTo = SQLCommand.split("SELECT")[0].split("INSERT INTO")[1].trim()
+        document.getElementById(tableToInsertTo).value = getSelectStatement(selectStatement, tableID)
+    };
+
 }
 
 function dropTable(tableID) {
@@ -104,7 +110,11 @@ function getSelectStatement(selectStatement, tableFinder) {
         let rowData = row.split(',')
         for (let k = 0; k < rowData.length; k++) {
             if (columnsToUse.includes(k)) {
-                outputString = outputString + ", " + rowData[k]
+                if (outputString.slice(-2) != '\n') {
+                    outputString = outputString + rowData[k] + ","
+                } else {
+                    outputString = outputString + rowData[k]
+                }
             }
         }
         outputString = outputString + "\n"
@@ -134,17 +144,15 @@ function showEntireTable(textInput) {
     // Loop through each line
     lines.forEach((line) => {
         // Split the line by commas to create an array of values
-        const values = line.split(",");
+        const values = line.split(",").filter(item => item.trim() !== '');
 
         // Create a new row in the table for each line
         const newRow = resultTable.insertRow(-1);
 
         // Loop through the values and add each one to a new cell in the row
         values.forEach((value) => {
-            if (value != '') {
-                const cell = newRow.insertCell(-1);
-                cell.textContent = value;
-            }
+            const cell = newRow.insertCell(-1);
+            cell.textContent = value;
         });
     });
 
