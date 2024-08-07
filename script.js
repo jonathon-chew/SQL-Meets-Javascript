@@ -1,8 +1,4 @@
 function RunSQLCommand() {
-    const table1 = document.getElementById("textInput1").value;
-    const table2 = document.getElementById("textInput2").value;
-    const table3 = document.getElementById("textInput3").value;
-
     const SQLCommand = document.getElementById('SQLcommand').value;
     let fromStatement = SQLCommand.split('FROM');
 
@@ -12,66 +8,64 @@ function RunSQLCommand() {
         resultsTable.remove()
     }
 
-    if (SQLCommand === "CREATE TABLE") {
-        createTable()
+    if (SQLCommand.includes("CREATE TABLE")) {
+        let table = SQLCommand.split("CREATE TABLE")[1].trim()
+        createTable(table)
         return 0
     }
 
+    if (SQLCommand.includes("DROP TABLE")) {
+        let table = SQLCommand.split("DROP TABLE")[1].trim()
+        dropTable(table)
+        return 0
+    }
 
     let tableName = fromStatement[1].trim().split(' ')[0];
     let selectStatement = fromStatement[0].trim().split(' ').slice(1);
+    let tableID = document.getElementById(tableName).value
 
     if (selectStatement[0] === '*') {
-        // Select everything
-        switch (tableName) {
-            case 'textInput1':
-                showEntireTable(table1);
-                break
-            case 'textInput2':
-                showEntireTable(table2);
-                break
-            case 'textInput3':
-                showEntireTable(table3);
-                break
-            default:
-                console.log("Can't do this");
-                break
-        }
+        showEntireTable(tableID);
     } else { // Print the columns listed - split by comma
-        // Empty array to add to
         let outputString = ''
-        switch (tableName) {
-            case 'textInput1':
-                outputString = getSelectStatement(selectStatement, table1)
-                showEntireTable(outputString)
-                break
-            case 'textInput2':
-                outputString = getSelectStatement(selectStatement, table2)
-                showEntireTable(outputString)
-                break
-            case 'textInput3':
-                outputString = getSelectStatement(selectStatement, table3)
-                showEntireTable(outputString)
-                break
-            default:
-                console.log("Can't do this");
-                break
-        }
+        outputString = getSelectStatement(selectStatement, tableID)
+        showEntireTable(outputString)
     }
 }
 
-function createTable() {
+function dropTable(tableID) {
+
+    let removeTable = document.getElementById(tableID)
+
+    if (removeTable) {
+        removeTable.remove()
+    } else {
+        console.log("Could not find a table by that name")
+    }
+
+    const paragraphs = document.querySelectorAll('p');
+    const targetParagraph = Array.from(paragraphs).find(p => p.textContent === tableID);
+
+    // Check if the paragraph was found and remove it
+    if (targetParagraph) {
+        targetParagraph.remove();
+    } else {
+        console.log('Paragraph with the specified text not found.');
+    }
+
+}
+
+function createTable(tableID) {
     let newTable = document.createElement('textarea')
-    let numberOfTables = document.querySelectorAll('textarea').length
-    let label = "textInput" + numberOfTables
+    let label = tableID
 
     newTable.id = label
-    newTable.title = label 
+    newTable.title = label
     newTable.placeholder = "Enter Text Data"
     newTable.style.width = "50vw"
     newTable.style.height = "10vh"
-   // newTable.style.overflow-wrap = "normal"
-   // newTable.style.overflow-x = "scroll"
+    // newTable.style.overflow-wrap = "normal"
+    // newTable.style.overflow-x = "scroll"
 
     let tableTitle = document.createElement('p')
     tableTitle.innerText = label
