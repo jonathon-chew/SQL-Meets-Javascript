@@ -49,13 +49,17 @@ function RunSQLCommand() {
     let selectStatement = fromStatement[0].trim().split('SELECT').slice(1);
     let tableID = document.getElementById(tableName).value
 
-    if (selectStatement[0].trim() === '*') {
-        showEntireTable(tableID);
-    } else { // Print the columns listed - split by comma
-        let outputString = ''
-        console.log("selectStatement is ", selectStatement)
-        outputString = getSelectStatement(selectStatement, tableID)
-        showEntireTable(outputString)
+    if (!SQLCommand.includes("WHERE")) {
+        if (selectStatement[0].trim() === '*') {
+            showEntireTable(tableID);
+        } else { // Print the columns listed - split by comma
+            let outputString = ''
+            console.log("selectStatement is ", selectStatement)
+            outputString = getSelectStatement(selectStatement, tableID)
+            showEntireTable(outputString)
+        }
+    } else {
+
     }
 
     if (SQLCommand.includes("INSERT INTO")) {
