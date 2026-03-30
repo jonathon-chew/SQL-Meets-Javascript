@@ -1,5 +1,7 @@
 # SQL Meets JavaScript
 
+![SQL Meets JavaScript](assets/readme-header.svg)
+
 `SQL Meets JavaScript` is a small browser-based experiment that lets you run a limited SQL-like syntax against CSV data entered directly into the page.
 
 The goal is not to build a full database engine. It is to explore how familiar SQL concepts can be mapped onto plain JavaScript and rendered immediately in the browser.

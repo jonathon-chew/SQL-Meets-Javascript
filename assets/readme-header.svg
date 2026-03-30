@@ -1,0 +1,153 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SQL Meets JavaScript README Header</title>
+  <desc id="desc">A technical banner showing SQL queries transformed through JavaScript into browser-rendered tabular output.</desc>
+  <defs>
+    <linearGradient id="bg" x1="80" y1="40" x2="1200" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111F"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="sqlGlow" x1="140" y1="160" x2="540" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="jsGlow" x1="720" y1="180" x2="1120" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE047"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="540" y1="290" x2="760" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DD4BF"/>
+      <stop offset="0.5" stop-color="#7DD3FC"/>
+      <stop offset="1" stop-color="#FACC15"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#223047" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="640" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="28" fill="url(#grid)" opacity="0.45"/>
+
+  <circle cx="241" cy="181" r="118" fill="url(#sqlGlow)" opacity="0.11" filter="url(#softGlow)"/>
+  <circle cx="1023" cy="217" r="130" fill="url(#jsGlow)" opacity="0.14" filter="url(#softGlow)"/>
+
+  <text x="92" y="108" fill="#E5EEF9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="52" font-weight="700">
+    SQL Meets JavaScript
+  </text>
+  <text x="94" y="145" fill="#8CA3BF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="20">
+    Query-shaped input transformed by JavaScript into browser-rendered tables
+  </text>
+
+  <g>
+    <rect x="86" y="188" width="386" height="284" rx="18" fill="#0B1626" stroke="#24435E" stroke-width="2"/>
+    <rect x="86" y="188" width="386" height="44" rx="18" fill="#0E2035"/>
+    <circle cx="118" cy="210" r="6" fill="#34D399"/>
+    <circle cx="142" cy="210" r="6" fill="#FBBF24"/>
+    <circle cx="166" cy="210" r="6" fill="#F87171"/>
+    <text x="196" y="216" fill="#8CA3BF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="16">
+      query.sql
+    </text>
+
+    <text x="118" y="280" fill="#34D399" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="28" font-weight="700">
+      SELECT
+    </text>
+    <text x="258" y="280" fill="#E5EEF9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="28">
+      name, role
+    </text>
+    <text x="118" y="332" fill="#34D399" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="28" font-weight="700">
+      FROM
+    </text>
+    <text x="214" y="332" fill="#E5EEF9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="28">
+      textInput1
+    </text>
+    <text x="118" y="384" fill="#34D399" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="28" font-weight="700">
+      INSERT INTO
+    </text>
+    <text x="322" y="384" fill="#E5EEF9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="28">
+      developers
+    </text>
+
+    <rect x="118" y="414" width="132" height="28" rx="8" fill="#10253C" stroke="#28597E"/>
+    <rect x="260" y="414" width="110" height="28" rx="8" fill="#10253C" stroke="#28597E"/>
+    <rect x="380" y="414" width="58" height="28" rx="8" fill="#10253C" stroke="#28597E"/>
+    <text x="132" y="434" fill="#8CA3BF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="14">
+      CSV rows
+    </text>
+    <text x="278" y="434" fill="#8CA3BF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="14">
+      columns
+    </text>
+    <text x="396" y="434" fill="#8CA3BF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="14">
+      *
+    </text>
+  </g>
+
+  <g opacity="0.95">
+    <path d="M530 328C594 328 594 248 658 248C722 248 722 328 786 328" stroke="url(#flow)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M530 382C594 382 594 462 658 462C722 462 722 382 786 382" stroke="url(#flow)" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+    <path d="M744 286L788 328L744 370" stroke="#7DD3FC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M572 358L530 328L572 298" stroke="#2DD4BF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="588" y="340" fill="#BDE7F8" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="20">
+      parse()
+    </text>
+    <text x="603" y="392" fill="#FDE68A" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="20">
+      map()
+    </text>
+  </g>
+
+  <g>
+    <rect x="808" y="188" width="384" height="284" rx="18" fill="#0B1626" stroke="#3A465A" stroke-width="2"/>
+    <rect x="808" y="188" width="384" height="44" rx="18" fill="#171F2B"/>
+    <circle cx="840" cy="210" r="6" fill="#93A6C1"/>
+    <circle cx="864" cy="210" r="6" fill="#93A6C1"/>
+    <circle cx="888" cy="210" r="6" fill="#93A6C1"/>
+    <text x="924" y="216" fill="#8CA3BF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="16">
+      browser output
+    </text>
+
+    <text x="840" y="282" fill="#FDE047" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="30" font-weight="700">
+      const
+    </text>
+    <text x="946" y="282" fill="#E5EEF9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="30">
+      rows = [
+    </text>
+    <text x="872" y="326" fill="#A7F3D0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="24">
+      { name: "Alice", role: "Developer" },
+    </text>
+    <text x="872" y="360" fill="#A7F3D0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="24">
+      { name: "Bob", role: "Analyst" }
+    </text>
+    <text x="840" y="394" fill="#E5EEF9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="30">
+      ];
+    </text>
+
+    <rect x="842" y="416" width="316" height="34" rx="8" fill="#131C28" stroke="#445166"/>
+    <line x1="942" y1="416" x2="942" y2="450" stroke="#445166"/>
+    <text x="874" y="439" fill="#B8C7D9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="16">
+      name
+    </text>
+    <text x="980" y="439" fill="#B8C7D9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="16">
+      role
+    </text>
+  </g>
+
+  <g opacity="0.8">
+    <rect x="92" y="534" width="160" height="32" rx="16" fill="#0E2035" stroke="#264762"/>
+    <rect x="270" y="534" width="168" height="32" rx="16" fill="#151E2B" stroke="#4B5563"/>
+    <rect x="456" y="534" width="184" height="32" rx="16" fill="#211B08" stroke="#7C5E10"/>
+    <text x="114" y="555" fill="#7DD3FC" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="15">
+      SQL-like syntax
+    </text>
+    <text x="296" y="555" fill="#C7D2E1" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="15">
+      browser session
+    </text>
+    <text x="482" y="555" fill="#FDE68A" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="15">
+      JavaScript parser
+    </text>
+  </g>
+</svg>
